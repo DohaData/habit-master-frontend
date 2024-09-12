@@ -1,46 +1,42 @@
-import "./Navbar.css";
-import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { AuthContext } from "../../context/auth.context";
+import { Navbar, Nav, Button, Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../../context/auth.context';
+import './Navbar.css';
 
-function Navbar() {
-  // Subscribe to the AuthContext to gain access to
-  // the values from AuthContext.Provider's `value` prop
+function CustomNavbar() {
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
 
   return (
-    <nav>
-      <Link to="/">
-        <button>Home</button>
-      </Link>
-
-      {isLoggedIn && (
-        <>
-          <button onClick={logOutUser}>Logout</button>
-
-          <Link to="/profile">
-            <button>Profile</button>
-            {/* <img src="https://picsum.photos/id/402/200/300" style={{ width: 50, height: 50, borderRadius: 25}} alt="profile" /> */}
-          </Link>
-
-          <span>{user && user.name}</span>
-        </>
-      )}
-
-      {!isLoggedIn && (
-        <>
-          <Link to="/signup">
-            {" "}
-            <button>Sign Up</button>{" "}
-          </Link>
-          <Link to="/login">
-            {" "}
-            <button>Login</button>{" "}
-          </Link>
-        </>
-      )}
-    </nav>
+    <Navbar expand="lg" className="custom-navbar">
+      <Container>
+        <Navbar.Brand as={Link} to="/" className="brand-title">
+          Habit<span className="brand-highlight">Tracker</span>
+        </Navbar.Brand>
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link as={Link} to="/" className="nav-link-custom">Home</Nav.Link>
+            <Nav.Link as={Link} to="/habits" className="nav-link-custom">Habits</Nav.Link>
+            <Nav.Link as={Link} to="/habit-tracker" className="nav-link-custom">Habits Tracker</Nav.Link>
+            <Nav.Link as={Link} to="/your-habits" className="nav-link-custom">Your Habits</Nav.Link>
+            {isLoggedIn && (
+              <>
+                <Nav.Link as={Link} to="/profile" className="nav-link-custom">Profile</Nav.Link>
+                <Button variant="outline-light" onClick={logOutUser} className="logout-button">Logout</Button>
+                <span className="navbar-user">{user && user.name}</span>
+              </>
+            )}
+            {!isLoggedIn && (
+              <>
+                <Nav.Link as={Link} to="/signup" className="nav-link-custom">Sign Up</Nav.Link>
+                <Nav.Link as={Link} to="/login" className="nav-link-custom">Login</Nav.Link>
+              </>
+            )}
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
 
-export default Navbar;
+export default CustomNavbar;
