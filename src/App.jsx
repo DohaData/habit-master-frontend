@@ -1,14 +1,14 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import HomePage from "./pages/HomePage/HomePage.jsx";
-import LoginPage from "./pages/LoginPage/LoginPage.jsx";
-import SignUpPage from "./pages/SignUpPage/SignupPage.jsx";
+import HomePage from "./pages/HomePage/HomePage";
+import LoginPage from "./pages/LoginPage/LoginPage";
+import SignUpPage from "./pages/SignupPage/SignupPage";
 // import LogoutPage from "./pages/LogoutPage/LogoutPage";
-import ProfilePage from "./pages/ProfilePage/ProfilePage.jsx";
+import ProfilePage from "./pages/ProfilePage/ProfilePage";
 // import HabitsPage from "./pages/HabitsPage/HabitsPage";
 // import HabitsTrackerPage from "./pages/HabitsTrackerPage/HabitsTrackerPage";
 // import YourHabitsPage from "./pages/YourHabitsPage/YourHabitsPage";
-import Navbar from "./components/Navbar/Navbar.jsx";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   return (
