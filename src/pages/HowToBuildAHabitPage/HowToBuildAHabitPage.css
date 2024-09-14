@@ -1,69 +1,69 @@
-.habit-page {
-    padding: 20px;
-    max-width: 900px;
-    margin: 0 auto;
-    font-family: 'Arial', sans-serif;
+/* Add specific styles for HowToBuildAHabitPage */
+.HowToBuildAHabitPage {
+  font-family: 'Roboto', sans-serif;
+  color: #ffffff;
+  background-color: #1f1f1f;
+  padding: 2rem;
+}
+
+/* Style for the main header */
+.HowToBuildAHabitPage h1 {
+  font-size: 2.5rem;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Style for the card component */
+.HowToBuildAHabitPage .card {
+  background-color: #333333;
+  border: none;
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  margin-bottom: 1.5rem;
+}
+
+.HowToBuildAHabitPage .card:hover {
+  transform: scale(1.05);
+}
+
+.HowToBuildAHabitPage .card-title {
+  color: #00d2ff;
+  font-size: 1.5rem; /* Ensure titles are prominent */
+}
+
+.HowToBuildAHabitPage .card-text {
+  color: #cccccc;
+  font-size: 1rem;
+}
+
+.HowToBuildAHabitPage ul {
+  color: #cccccc;
+  padding-left: 20px;
+  margin-bottom: 1rem; /* Ensure space below the list */
+}
+
+.HowToBuildAHabitPage ul li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .HowToBuildAHabitPage {
+    padding: 1rem;
   }
-  
-  .habit-header {
-    text-align: center;
-    margin-bottom: 30px;
+
+  .HowToBuildAHabitPage h1 {
+    font-size: 2rem;
   }
-  
-  .habit-header h1 {
-    font-size: 2.5rem;
-    color: #333;
+
+  .HowToBuildAHabitPage .card-title {
+    font-size: 1.25rem; /* Smaller size for smaller screens */
   }
-  
-  .card {
-    margin-bottom: 30px;
-    border: none;
-    background-color: #f9f9f9;
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+
+  .HowToBuildAHabitPage .card-text, .HowToBuildAHabitPage ul li {
+    font-size: 0.9rem;
   }
-  
-  .card-body {
-    padding: 20px;
-  }
-  
-  .card-title {
-    font-size: 1.8rem;
-    color: #4CAF50;
-    margin-bottom: 15px;
-  }
-  
-  .card-text {
-    font-size: 1.1rem;
-    color: #555;
-    line-height: 1.6;
-  }
-  
-  ul {
-    padding-left: 20px;
-    margin-bottom: 20px;
-  }
-  
-  ul li {
-    margin-bottom: 10px;
-    font-size: 1.1rem;
-    color: #555;
-  }
-  
-  @media (max-width: 768px) {
-    .habit-page {
-      padding: 15px;
-    }
-  
-    .habit-header h1 {
-      font-size: 2rem;
-    }
-  
-    .card-title {
-      font-size: 1.5rem;
-    }
-  
-    .card-text, ul li {
-      font-size: 1rem;
-    }
-  }
-  
+}
