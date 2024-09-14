@@ -3,7 +3,7 @@ import axios from 'axios';
 class HabitsService {
   constructor() {
     this.api = axios.create({
-      baseURL: import.meta.env.REACT_APP_SERVER_URL || "http://localhost:5005"
+      baseURL: import.meta.env.VITE_REACT_APP_SERVER_URL || "http://localhost:5005"
     });
 
     // Automatically set JWT token in the headers for every request

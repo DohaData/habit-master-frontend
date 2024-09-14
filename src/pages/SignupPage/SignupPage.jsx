@@ -24,7 +24,7 @@ function SignupPage() {
     /* 
     const authToken = localStorage.getItem("authToken");
     axios.post(
-      `${process.env.REACT_APP_SERVER_URL}/auth/signup`, 
+      `${process.env.VITE_REACT_APP_SERVER_URL}/auth/signup`, 
       requestBody, 
       { headers: { Authorization: `Bearer ${authToken}` },
     })
