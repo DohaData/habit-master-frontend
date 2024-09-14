@@ -1,9 +1,9 @@
 import { Container, Row, Col, Card } from "react-bootstrap";
-// import "./WhatIsAHabitPage.css";
+import "./WhatIsAHabitPage.css";
 
 function WhatIsAHabitPage() {
     return (
-        <div>
+        <div className="WhatIsAHabitPage">
             <Container className="habit-page">
                 <Row className="habit-header">
                     <Col>

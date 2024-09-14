@@ -1,9 +1,9 @@
 import { Container, Row, Col, Card } from 'react-bootstrap';
-// import './HowToBuildAHabitPage.css';
+import './HowToBuildAHabitPage.css';
 
 const HowToBuildAHabitPage = () => {
   return (
-    <Container className="habit-page">
+    <Container className="HowToBuildAHabitPage">
       <Row className="habit-header">
         <Col>
           <h1 className="text-center">How to Build a Habit</h1>
