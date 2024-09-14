@@ -1,0 +1,69 @@
+.habit-page {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .habit-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .habit-header h1 {
+    font-size: 2.5rem;
+    color: #333;
+  }
+  
+  .card {
+    margin-bottom: 30px;
+    border: none;
+    background-color: #f9f9f9;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .card-title {
+    font-size: 1.8rem;
+    color: #4CAF50;
+    margin-bottom: 15px;
+  }
+  
+  .card-text {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+  }
+  
+  ul li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #555;
+  }
+  
+  @media (max-width: 768px) {
+    .habit-page {
+      padding: 15px;
+    }
+  
+    .habit-header h1 {
+      font-size: 2rem;
+    }
+  
+    .card-title {
+      font-size: 1.5rem;
+    }
+  
+    .card-text, ul li {
+      font-size: 1rem;
+    }
+  }
+  
