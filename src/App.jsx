@@ -9,6 +9,7 @@ import ProfilePage from "./pages/ProfilePage/ProfilePage";
 // import HabitsTrackerPage from "./pages/HabitsTrackerPage/HabitsTrackerPage";
 // import YourHabitsPage from "./pages/YourHabitsPage/YourHabitsPage";
 import Navbar from "./components/Navbar/Navbar";
+import Footer from './components/Footer/Footer.jsx';
 
 function App() {
   return (
@@ -24,8 +25,6 @@ function App() {
         <Route path="/habits-tracker" element={<HabitsTrackerPage />} />
         <Route path="/your-habits" element={<YourHabitsPage />} /> */}
       </Routes>
+      <Footer />
     </div>
-  );
-}
-
-export default App;
+)};
