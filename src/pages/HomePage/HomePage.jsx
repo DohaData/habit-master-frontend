@@ -47,7 +47,7 @@ function HomePage() {
         <Row className="justify-content-center">
           <Col xs={12} md={4} className="d-flex justify-content-center">
             <Link to="/what-is-a-habit" className="card-link">
-              <Card>
+              <Card className="custom-card">
                 <Card.Body>
                   <Card.Title>What is a Habit?</Card.Title>
                   <Card.Text>
@@ -60,12 +60,12 @@ function HomePage() {
           </Col>
           <Col xs={12} md={4} className="d-flex justify-content-center">
             <Link to="/how-to-build-a-habit" className="card-link">
-              <Card>
+              <Card className="custom-card">
                 <Card.Body>
                   <Card.Title>How to Develop a Habit?</Card.Title>
                   <Card.Text>
                     Discover strategies and tips to build and maintain new
-                    habits effectively.
+                    habits effectively without troubles.
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -73,7 +73,7 @@ function HomePage() {
           </Col>
           <Col xs={12} md={4} className="d-flex justify-content-center">
             <Link to="/success-stories" className="card-link">
-              <Card>
+              <Card className="custom-card">
                 <Card.Body>
                   <Card.Title>Success Stories</Card.Title>
                   <Card.Text>

@@ -3,6 +3,7 @@
 /* Now you can use the fonts throughout your CSS file */
 body {
   font-family: 'Roboto', sans-serif;
+  background-color: #1f1f1f;
 }
 
 h1, h2, h3, .brand-title {
