@@ -2,14 +2,15 @@ import "./HomePage.css";
 import { useState, useEffect } from "react";
 import { Carousel, Card, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import HabitsService from "../../services/habits.service";
+import habitsService from "../../services/habits.service";
 import "bootstrap/dist/css/bootstrap.min.css"; // Ensure this is imported
 
 function HomePage() {
   const [habits, setHabits] = useState([]);
 
   useEffect(() => {
-    HabitsService.getAll()
+    habitsService
+      .getAll()
       .then((response) => {
         setHabits(response.data);
       })
@@ -71,15 +72,17 @@ function HomePage() {
             </Link>
           </Col>
           <Col xs={12} md={4} className="d-flex justify-content-center">
-            <Card>
-              <Card.Body>
-                <Card.Title>Success Stories</Card.Title>
-                <Card.Text>
-                  Read inspiring stories of individuals who have successfully
-                  changed their habits.
-                </Card.Text>
-              </Card.Body>
-            </Card>
+            <Link to="/success-stories" className="card-link">
+              <Card>
+                <Card.Body>
+                  <Card.Title>Success Stories</Card.Title>
+                  <Card.Text>
+                    Read inspiring stories of individuals who have successfully
+                    changed their habits.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Link>
           </Col>
         </Row>
       </div>

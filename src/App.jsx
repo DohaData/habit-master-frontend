@@ -12,6 +12,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Footer from './components/Footer/Footer.jsx';
 import WhatIsAHabitPage from "./pages/WhatIsAHabitPage/WhatIsAHabitPage";
 import HowToBuildAHabitPage from "./pages/HowToBuildAHabitPage/HowToBuildAHabitPage";
+import SuccessStoriesPage from "./pages/SuccessStoriesPage/SuccessStoriesPage";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/your-habits" element={<YourHabitsPage />} /> */}
         <Route path="/what-is-a-habit" element={<WhatIsAHabitPage />} />
         <Route path="/how-to-build-a-habit" element={<HowToBuildAHabitPage />} />
+        <Route path="/success-stories" element={<SuccessStoriesPage />} />
       </Routes>
       <Footer />
     </div>
