@@ -1,6 +1,7 @@
 import './HomePage.css';
 import { useState, useEffect } from "react";
 import { Carousel, Card, Col, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom'; 
 import HabitsService from "../../services/habits.service";
 import 'bootstrap/dist/css/bootstrap.min.css'; // Ensure this is imported
 
@@ -38,14 +39,16 @@ function HomePage() {
       <div className="card-container">
         <Row className="justify-content-center">
           <Col xs={12} md={4} className="d-flex justify-content-center">
-            <Card>
-              <Card.Body>
-                <Card.Title>What is a Habit?</Card.Title>
-                <Card.Text>
-                  Learn about the concept of habits and why they are essential for personal growth.
-                </Card.Text>
-              </Card.Body>
-            </Card>
+          <Link to="/what-is-a-habit" className="card-link"> {/* Link to WhatIsAHabitPage */} // WHAT IS THE EXACT LINK??
+              <Card>
+                <Card.Body>
+                  <Card.Title>What is a Habit?</Card.Title>
+                  <Card.Text>
+                    Learn about the concept of habits and why they are essential for personal growth.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Link>
           </Col>
           <Col xs={12} md={4} className="d-flex justify-content-center">
             <Card>

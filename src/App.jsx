@@ -24,6 +24,8 @@ function App() {
         {/* <Route path="/habits" element={<HabitsPage />} />
         <Route path="/habits-tracker" element={<HabitsTrackerPage />} />
         <Route path="/your-habits" element={<YourHabitsPage />} /> */}
+        <Route path="/what-is-a-habit" element={<WhatIsAHabitPage />} />
+        <Route path="/how-to-build-a-habit" element={<HowToBuildAHabitPage />} />
       </Routes>
       <Footer />
     </div>
