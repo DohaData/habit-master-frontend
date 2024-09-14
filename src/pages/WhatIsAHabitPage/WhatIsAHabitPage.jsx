@@ -17,7 +17,7 @@ function WhatIsAHabitPage() {
                             <Card.Body>
                                 <Card.Title>Definition</Card.Title>
                                 <Card.Text>
-                                    According to James Clear, in his book "Atomic Habits", a habit is
+                                    According to James Clear, in his book &quot;Atomic Habits&quot;, a habit is
                                     a routine or behavior that is performed regularly—and, in many
                                     cases, automatically. It’s a loop of actions that has been
                                     ingrained over time through repetition.
