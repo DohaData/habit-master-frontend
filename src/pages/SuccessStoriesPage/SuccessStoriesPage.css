@@ -1,0 +1,49 @@
+/* SuccessStoriesPage.css */
+
+.success-stories-page {
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    background-color: #1f1f1f;
+    padding: 2rem;
+  }
+  
+  .page-heading {
+    font-size: 2rem;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .custom-card {
+    background-color: #333333;
+    border: none;
+    color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  .custom-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .user-picture {
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .story-title {
+    color: #00d2ff;
+  }
+  
+  .story-description {
+    color: #cccccc;
+  }
+  
+  @media (max-width: 768px) {
+    .row {
+      flex-direction: column;
+    }
+  }
+  
