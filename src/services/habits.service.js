@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-class ExampleService {
+class HabitsService {
   constructor() {
     this.api = axios.create({
-      baseURL: process.env.REACT_APP_SERVER_URL || "http://localhost:5005"
+      baseURL: import.meta.env.REACT_APP_SERVER_URL || "http://localhost:5005"
     });
 
     // Automatically set JWT token in the headers for every request
@@ -19,14 +19,14 @@ class ExampleService {
     });
   }
 
+  // GET /api/examples
+  getAll = async () => {
+    return this.api.get('/habits');
+  }
+
   // POST /api/examples
   createOne = async (requestBody) => {
     return this.api.post('/api/examples', requestBody);
-  }
-
-  // GET /api/examples
-  getAll = async () => {
-    return this.api.get('/api/examples');
   }
 
   // GET /api/examples/:id
@@ -48,6 +48,6 @@ class ExampleService {
 }
 
 // Create one instance of the service
-const exampleService = new ExampleService();
+const habitsService = new HabitsService();
 
-export default exampleService;
+export default habitsService;
