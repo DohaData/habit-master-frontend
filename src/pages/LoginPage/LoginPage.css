@@ -1,0 +1,98 @@
+/* Add specific styles for LoginPage */
+.LoginPage {
+  font-family: 'Roboto', sans-serif;
+  color: #ffffff;
+  background-color: #1f1f1f;
+  padding: 2rem;
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.LoginPage h1 {
+  font-size: 2rem;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.LoginPage form {
+  display: flex;
+  flex-direction: column;
+}
+
+.LoginPage label {
+  color: #cccccc;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.LoginPage input {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background-color: #333;
+  color: #ffffff;
+}
+
+.LoginPage input::placeholder {
+  color: #666;
+}
+
+.LoginPage button {
+  background-color: #00d2ff;
+  border: none;
+  color: #ffffff;
+  padding: 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.LoginPage button:hover {
+  background-color: #0098d6;
+}
+
+.LoginPage .error-message {
+  color: #ff4d4d;
+  font-size: 0.875rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.LoginPage p {
+  text-align: center;
+  color: #cccccc;
+  margin-top: 1rem;
+}
+
+.LoginPage a {
+  color: #00d2ff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.LoginPage a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .LoginPage {
+    padding: 1rem;
+  }
+
+  .LoginPage h1 {
+    font-size: 1.5rem;
+  }
+
+  .LoginPage input {
+    font-size: 0.875rem;
+  }
+
+  .LoginPage button {
+    font-size: 0.875rem;
+  }
+}
