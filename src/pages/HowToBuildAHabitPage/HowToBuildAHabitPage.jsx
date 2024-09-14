@@ -1,5 +1,5 @@
 import { Container, Row, Col, Card } from 'react-bootstrap';
-import './HowToBuildAHabitPage.css';
+// import './HowToBuildAHabitPage.css';
 
 const HowToBuildAHabitPage = () => {
   return (

@@ -10,6 +10,8 @@ import ProfilePage from "./pages/ProfilePage/ProfilePage";
 // import YourHabitsPage from "./pages/YourHabitsPage/YourHabitsPage";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from './components/Footer/Footer.jsx';
+import WhatIsAHabitPage from "./pages/WhatIsAHabitPage/WhatIsAHabitPage";
+import HowToBuildAHabitPage from "./pages/HowToBuildAHabitPage/HowToBuildAHabitPage";
 
 function App() {
   return (

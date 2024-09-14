@@ -1,12 +1,9 @@
 import { Container, Row, Col, Card } from "react-bootstrap";
-import "./WhatIsAHabitPage.css";
-import Navbar from "./components/Navbar/Navbar";
-import Footer from './components/Footer/Footer.jsx';
+// import "./WhatIsAHabitPage.css";
 
 function WhatIsAHabitPage() {
     return (
         <div>
-            <Navbar />
             <Container className="habit-page">
                 <Row className="habit-header">
                     <Col>
@@ -86,7 +83,6 @@ function WhatIsAHabitPage() {
                     </Col>
                 </Row>
             </Container>
-            <Footer />
         </div>
     );
 }
