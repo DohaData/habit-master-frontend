@@ -26,26 +26,24 @@ class HabitsService {
 
   // POST /api/examples
   createOne = async (requestBody) => {
-    return this.api.post('/api/examples', requestBody);
+  return this.api.post('/create-habit', requestBody);
   }
 
   // GET /api/examples/:id
   getOne = async (id) => {
-    return this.api.get(`/api/examples/${id}`);
+return this.api.get(`/habits/${id}`);
   }
 
   // PUT /api/examples/:id
   updateOne = async (id, requestBody) => {
-    return this.api.put(`/api/examples/${id}`, requestBody);
+return this.api.put(`/habits/${id}`, requestBody);
   }
 
   // DELETE /api/examples/:id
-  deleteProject = async (id) => {
-    return this.api.delete(`/api/examples/${id}`);
-  } 
-
-
-}
+  deleteHabit = async (id) => {
+    return this.api.delete(`/habits/${id}`);
+  }
+};
 
 // Create one instance of the service
 const habitsService = new HabitsService();

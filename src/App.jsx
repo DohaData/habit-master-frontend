@@ -6,7 +6,7 @@ import SignUpPage from "./pages/SignupPage/SignupPage";
 // import LogoutPage from "./pages/LogoutPage/LogoutPage";
 import EditProfilePage from "./pages/EditProfilePage/EditProfilePage.jsx";
 import ProfilePage from "./pages/ProfilePage/ProfilePage.jsx";
-// import HabitsPage from "./pages/HabitsPage/HabitsPage";
+import HabitsPage from "./pages/HabitsPage/HabitsPage";
 // import HabitsTrackerPage from "./pages/HabitsTrackerPage/HabitsTrackerPage";
 // import YourHabitsPage from "./pages/YourHabitsPage/YourHabitsPage";
 import Navbar from "./components/Navbar/Navbar";
@@ -26,8 +26,8 @@ function App() {
         {/* <Route path="/logout" element={<LogoutPage />} /> */}
         <Route path="/edit-profile" element={<EditProfilePage />} />
         <Route path="/profile" element={<ProfilePage />} />
-        {/* <Route path="/habits" element={<HabitsPage />} />
-        <Route path="/habits-tracker" element={<HabitsTrackerPage />} />
+        <Route path="/habits" element={<HabitsPage />} />
+        {/* <Route path="/habits-tracker" element={<HabitsTrackerPage />} />
         <Route path="/your-habits" element={<YourHabitsPage />} /> */}
         <Route path="/what-is-a-habit" element={<WhatIsAHabitPage />} />
         <Route
