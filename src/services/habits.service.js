@@ -26,7 +26,7 @@ class HabitsService {
 
   // POST /api/examples
   createOne = async (requestBody) => {
-  return this.api.post('/create-habit', requestBody);
+  return this.api.post('/habits/create-habit', requestBody);
   }
 
   // GET /api/examples/:id
