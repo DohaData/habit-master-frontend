@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
-import { Container, Row, Col, Card } from 'react-bootstrap';
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
-import trackerService from '../../services/tracker.service';
-import './HabitsTrackerPage.css';
+import { useState, useEffect } from "react";
+import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
+import trackerService from "../../services/tracker.service";
+import "./HabitsTrackerPage.css";
 
 const HabitsTrackerPage = () => {
   const [habits, setHabits] = useState([]);
@@ -15,36 +15,86 @@ const HabitsTrackerPage = () => {
     trackerService
       .getAll()
       .then((response) => {
-        setHabits(response.data);  // Store fetched tasks
+        setHabits(response.data); // Store fetched tasks
       })
-      .catch((error) => console.error('There was an error fetching the habits!', error));
+      .catch((error) =>
+        console.error("There was an error fetching the habits!", error)
+      );
   }, []);
+
+  // Update tasks for the selected date whenever habits or selectedDate changes
+  useEffect(() => {
+    const tasksOnSelectedDate = habits
+      .flatMap((habit) =>
+        habit.taskTrackerIds.filter((taskTracker) => {
+          const taskDate = new Date(taskTracker.date);
+          return (
+            taskDate.getFullYear() === selectedDate.getFullYear() &&
+            taskDate.getMonth() === selectedDate.getMonth() &&
+            taskDate.getDate() === selectedDate.getDate()
+          );
+        })
+      )
+      .map((taskTracker) => {
+        return {
+          habitId: habits.find((habit) =>
+            habit.taskTrackerIds.some((t) => t._id === taskTracker._id)
+          ).habitId,
+          taskTrackerId: taskTracker._id,
+          taskId: taskTracker.taskId,
+          isCompleted: taskTracker.isCompleted,
+        };
+      });
+
+    setTasksForDay(tasksOnSelectedDate);
+  }, [habits, selectedDate]);
 
   // Function to handle date change in the calendar
   const onDateChange = (date) => {
     setSelectedDate(date);
+  };
 
-    // Filter tasks for the selected date
-    const tasksOnSelectedDate = habits.filter((habit) => {
-      for (let taskTracker of habit.taskTrackerIds) {
-        let taskDate = new Date(taskTracker.date);
-        if (
-            taskDate.getFullYear() === date.getFullYear() &&
-            taskDate.getMonth() === date.getMonth() &&
-            taskDate.getDate() === date.getDate()
-        ) {
-          return true;
-        }
-    }
-    });
+  const updateHabitLocally = (updatedTask) => {
+    setHabits((prevHabits) =>
+      prevHabits.map((habit) => ({
+        ...habit,
+        taskTrackerIds: habit.taskTrackerIds.map((task) =>
+          task._id === updatedTask._id ? updatedTask : task
+        ),
+      }))
+    );
+  };
 
-    setTasksForDay(tasksOnSelectedDate);  // Update tasks for selected date
+  const markTaskAsCompleted = (taskTrackerId) => {
+    trackerService
+      .markTaskAsCompleted(taskTrackerId)
+      .then((updatedTask) => {
+        updateHabitLocally(updatedTask.data); // Update task locally
+      })
+      .catch(() => console.error("Failed to mark task as completed."));
+  };
+
+  const deleteTask = (taskTrackerId) => {
+    trackerService
+      .deleteTask(taskTrackerId)
+      .then(() => {
+        // Remove the task locally
+        setHabits((prevHabits) =>
+          prevHabits.map((habit) => ({
+            ...habit,
+            taskTrackerIds: habit.taskTrackerIds.filter(
+              (task) => task._id !== taskTrackerId
+            ),
+          }))
+        );
+      })
+      .catch(() => console.error("Failed to delete task."));
   };
 
   return (
     <Container className="habits-page">
       <h1 className="text-center">Habits Tracker</h1>
-      
+
       <Row>
         <Col md={6} className="calendar-col">
           <h3 className="text-center">Select a Date</h3>
@@ -52,19 +102,35 @@ const HabitsTrackerPage = () => {
         </Col>
 
         <Col md={6} className="tasks-col">
-          <h3 className="text-center">Tasks for {selectedDate.toDateString()}</h3>
+          <h3 className="text-center">
+            Tasks for {selectedDate.toDateString()}
+          </h3>
           {tasksForDay.length > 0 ? (
             tasksForDay.map((task) => (
-              <Card key={task._id} className="mb-3">
+              <Card key={task.taskTrackerId} className="mb-3">
                 <Card.Body>
                   <Card.Title>{task.habitId.name}</Card.Title>
                   <Card.Text>{task.habitId.description}</Card.Text>
                   <Card.Text>
-                    <strong>Task:</strong> {task.taskTrackerIds[0].taskId.name}
+                    <strong>Task:</strong> {task.taskId.name}
                   </Card.Text>
                   <Card.Text>
-                    <strong>Status:</strong> {task.taskTrackerIds[0].isCompleted ? 'Completed' : 'Pending'}
+                    <strong>Status:</strong>{" "}
+                    {task.isCompleted ? "Completed" : "Pending"}
                   </Card.Text>
+                  <Button
+                    variant="primary"
+                    onClick={() => markTaskAsCompleted(task.taskTrackerId)}
+                  >
+                    Mark as Completed
+                  </Button>
+                  <Button
+                    variant="danger"
+                    onClick={() => deleteTask(task.taskTrackerId)}
+                    className="ml-2"
+                  >
+                    Delete Task
+                  </Button>
                 </Card.Body>
               </Card>
             ))

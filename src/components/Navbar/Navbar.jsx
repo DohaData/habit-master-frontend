@@ -13,6 +13,11 @@ function CustomNavbar() {
         <Navbar.Brand as={Link} to="/" className="brand-title">
           Habit<span className="brand-highlight">Tracker</span>
         </Navbar.Brand>
+
+        {/* Hamburger menu (navbar toggle) */}
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
+        {/* Collapsible navbar */}
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/" className="nav-link-custom">
