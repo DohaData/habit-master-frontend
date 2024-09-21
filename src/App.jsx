@@ -15,6 +15,7 @@ import WhatIsAHabitPage from "./pages/WhatIsAHabitPage/WhatIsAHabitPage";
 import HowToBuildAHabitPage from "./pages/HowToBuildAHabitPage/HowToBuildAHabitPage";
 import SuccessStoriesPage from "./pages/SuccessStoriesPage/SuccessStoriesPage";
 // import HabitDetailsPage from './pages/HabitDetailsPage/HabitDetailsPage';
+import YourHabitProgress from "./pages/YourHabitProgress/YourHabitProgress";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/habits" element={<HabitsPage />} />
         <Route path="/habits-tracker" element={<HabitsTrackerPage />} />
         <Route path="/your-habits" element={<YourHabitsPage />} /> 
+        <Route path="/your-habit-progress/:id" element={<YourHabitProgress />} />
         <Route path="/what-is-a-habit" element={<WhatIsAHabitPage />} />
         <Route
           path="/how-to-build-a-habit"
