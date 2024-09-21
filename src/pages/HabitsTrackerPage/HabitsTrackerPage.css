@@ -1,0 +1,96 @@
+/* General page styling */
+.habits-page {
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    background-color: #1f1f1f;
+    padding: 2rem;
+  }
+  
+  .habits-page h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  /* Calendar container */
+  .calendar-col {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .react-calendar {
+    background-color: #333333;
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  .react-calendar__tile {
+    color: #ffffff;
+    font-weight: 500;
+  }
+  
+  .react-calendar__tile--active {
+    background-color: #00d2ff;
+    color: #ffffff;
+  }
+  
+  /* Task display styling */
+  .tasks-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .tasks-col h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #00d2ff;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .card-container {
+    margin-top: 2rem;
+  }
+  
+  .custom-card {
+    background-color: #333333;
+    border: none;
+    color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 1rem;
+  }
+  
+  .custom-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+  }
+  
+  .card-title {
+    color: #00d2ff;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .card-text {
+    color: #cccccc;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    .calendar-col,
+    .tasks-col {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  

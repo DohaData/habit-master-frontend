@@ -1,6 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
 import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import { AuthContext } from '../../context/auth.context';
 import habitsService from '../../services/habits.service';
 import './HabitsPage.css'; // Ensure this file exists for styling
@@ -42,8 +41,15 @@ const HabitsPage = () => {
         return habitsService.getAllHabits(); // Refresh the list of habits
       })
       .then((response) => setHabits(response.data))
-      .catch((error) => setErrorMessage('Failed to add habit. Please try again.'));
+      .catch(() => setErrorMessage('Failed to add habit. Please try again.'));
   };
+
+  const addHabitForUser = (habitId) => {
+    habitsService
+      .addHabitForUser(habitId)
+      .then(() => setSuccessMessage('Habit added successfully!'))
+      .catch(() => setErrorMessage('Failed to add habit. Please try again.'));
+  }
 
   return (
     <Container className="habits-page">
@@ -53,13 +59,12 @@ const HabitsPage = () => {
         {habits.map((habit) => (
           <Col xs={12} md={4} key={habit._id} className="mb-3">
             {/* Wrap the Card in a Link */}
-            <Link to={`/HabitDetails/${habit._id}`} className="habit-link">
               <Card className="habit-card">
                 <Card.Body>
                   <Card.Title>{habit.name}</Card.Title>
+                  {isLoggedIn && <Button variant="primary" onClick={() => addHabitForUser(habit._id)}>Add Habit</Button>}
                 </Card.Body>
               </Card>
-            </Link>
           </Col>
         ))}
       </Row>
