@@ -24,6 +24,14 @@ class TrackerService {
   getAll = async () => {
     return this.api.get("/tracker");
   };
+
+  markTaskAsCompleted = async (taskTrackerId) => {
+    return this.api.post(`/tracker/complete-task/${taskTrackerId}`);
+  };
+
+  deleteTask = async (taskTrackerId) => {
+    return this.api.delete(`/tracker/delete-task/${taskTrackerId}`);
+  };
 }
 
 // Create one instance of the service
