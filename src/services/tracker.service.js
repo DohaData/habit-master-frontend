@@ -29,9 +29,22 @@ class TrackerService {
     return this.api.post(`/tracker/complete-task/${taskTrackerId}`);
   };
 
+  getAllForAHabit = async (habitId) => {
+    return this.api.get(`/tracker/${habitId}`);
+  };
+
   deleteTask = async (taskTrackerId) => {
     return this.api.delete(`/tracker/delete-task/${taskTrackerId}`);
   };
+
+  deleteAllTaskTrackers = async (habitId) => {
+    return this.api.delete(`/tracker/delete-all-task-trackers/${habitId}`);
+  };
+
+  deleteHabitTracker = async (habitId) => {
+    return this.api.delete(`/tracker/delete-habit-tracker/${habitId}`);
+  };
+  
 }
 
 // Create one instance of the service

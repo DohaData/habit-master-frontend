@@ -8,7 +8,7 @@ import EditProfilePage from "./pages/EditProfilePage/EditProfilePage.jsx";
 import ProfilePage from "./pages/ProfilePage/ProfilePage.jsx";
 import HabitsPage from "./pages/HabitsPage/HabitsPage";
 import HabitsTrackerPage from "./pages/HabitsTrackerPage/HabitsTrackerPage";
-// import YourHabitsPage from "./pages/YourHabitsPage/YourHabitsPage";
+import YourHabitsPage from "./pages/YourHabitsPage/YourHabitsPage";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer.jsx";
 import WhatIsAHabitPage from "./pages/WhatIsAHabitPage/WhatIsAHabitPage";
@@ -29,7 +29,7 @@ function App() {
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/habits" element={<HabitsPage />} />
         <Route path="/habits-tracker" element={<HabitsTrackerPage />} />
-        {/* <Route path="/your-habits" element={<YourHabitsPage />} /> */}
+        <Route path="/your-habits" element={<YourHabitsPage />} /> 
         <Route path="/what-is-a-habit" element={<WhatIsAHabitPage />} />
         <Route
           path="/how-to-build-a-habit"
