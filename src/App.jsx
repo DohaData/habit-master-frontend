@@ -14,6 +14,7 @@ import Footer from "./components/Footer/Footer.jsx";
 import WhatIsAHabitPage from "./pages/WhatIsAHabitPage/WhatIsAHabitPage";
 import HowToBuildAHabitPage from "./pages/HowToBuildAHabitPage/HowToBuildAHabitPage";
 import SuccessStoriesPage from "./pages/SuccessStoriesPage/SuccessStoriesPage";
+// import HabitDetailsPage from './pages/HabitDetailsPage/HabitDetailsPage';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           element={<HowToBuildAHabitPage />}
         />
         <Route path="/success-stories" element={<SuccessStoriesPage />} />
+        {/* <Route path="/HabitDetails/:id" element={<HabitDetailsPage />} /> */}
       </Routes>
       <Footer />
     </div>
