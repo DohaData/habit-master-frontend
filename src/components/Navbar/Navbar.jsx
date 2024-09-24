@@ -26,14 +26,22 @@ function CustomNavbar() {
             <Nav.Link as={Link} to="/habits" className="nav-link-custom">
               Habits
             </Nav.Link>
-            <Nav.Link as={Link} to="/habits-tracker" className="nav-link-custom">
+            <Nav.Link
+              as={Link}
+              to="/habits-tracker"
+              className="nav-link-custom"
+            >
               Habits Tracker
-            </Nav.Link>
-            <Nav.Link as={Link} to="/your-habits" className="nav-link-custom">
-              Your Habits
             </Nav.Link>
             {isLoggedIn && (
               <>
+                <Nav.Link
+                  as={Link}
+                  to="/your-habits"
+                  className="nav-link-custom"
+                >
+                  Your Habits
+                </Nav.Link>
                 <Nav.Link
                   as={Link}
                   to="/edit-profile"
