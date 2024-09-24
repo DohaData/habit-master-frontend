@@ -1,6 +1,3 @@
-/* YourHabitsPage.css */
-
-/* Main page container */
 .your-habits-page {
     font-family: 'Roboto', sans-serif;
     color: #ffffff;
@@ -39,25 +36,47 @@
     color: #cccccc;
   }
   
-  /* Buttons inside the card */
+  /* Progress bar styling */
+  .progress-bar {
+    background-color: #00d2ff;
+  }
+  
+  .progress-bar .progress-bar-label {
+    color: #1f1f1f;
+  }
+  
+  /* Button styling */
   .habit-card .btn-success {
     background-color: #00d2ff;
     border: none;
     color: #ffffff;
   }
   
-  .habit-card .btn-success:hover {
-    background-color: #00a0cc;
-  }
-  
   .habit-card .btn-danger {
     background-color: #dc3545;
     border: none;
+  }
+  
+  .habit-card .btn-success:hover,
+  .habit-card .btn-danger:hover {
+    background-color: #00a0cc;
+  }
+  
+  /* Form styling */
+  .form-label {
     color: #ffffff;
   }
   
-  .habit-card .btn-danger:hover {
-    background-color: #c82333;
+  .form-control {
+    background-color: #333333;
+    color: #ffffff;
+    border: 1px solid #00d2ff;
+  }
+  
+  .form-control:focus {
+    background-color: #444444;
+    border-color: #00d2ff;
+    box-shadow: 0 0 5px rgba(0, 210, 255, 0.5);
   }
   
   /* Error message */

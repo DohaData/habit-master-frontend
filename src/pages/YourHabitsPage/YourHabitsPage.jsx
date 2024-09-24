@@ -2,17 +2,17 @@ import { useState, useEffect } from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import trackerService from "../../services/tracker.service";
-// import './YourHabitsPage.css'; // Ensure styling is set
+import './YourHabitsPage.css';
 
 const YourHabitsPage = () => {
-  const [userHabitsTrackers, setuserHabitsTrackers] = useState([]);
+  const [userHabitsTrackers, setUserHabitsTrackers] = useState([]);
   const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     trackerService
       .getAll()
       .then((response) => {
-        setuserHabitsTrackers(response.data);
+        setUserHabitsTrackers(response.data);
         console.log(response.data);
       })
       .catch((error) =>
@@ -27,7 +27,7 @@ const YourHabitsPage = () => {
       // Fetch all habit trackers related to the habit
       const habitTrackers = await trackerService.getAllForAHabit(habitId);
       console.log(habitTrackers);
-      const taskTrackerIds = habitTrackers.data.taskTrackerIds;
+      const taskTrackerIds = habitTrackers.data.taskTrackerIds.map(taskTracker => taskTracker._id);
 
       // Delete habit tracker
       await trackerService.deleteHabitTracker(habitId);
@@ -37,7 +37,7 @@ const YourHabitsPage = () => {
 
       // Fetch updated habits to refresh the page
       const updatedHabits = await trackerService.getAll();
-      setuserHabitsTrackers(updatedHabits.data);
+      setUserHabitsTrackers(updatedHabits.data);
     } catch (error) {
       setErrorMessage(`Failed to delete habit. ${error.message}`);
     }
