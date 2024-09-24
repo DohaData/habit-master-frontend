@@ -11,7 +11,7 @@ function CustomNavbar() {
     <Navbar expand="lg" className="custom-navbar">
       <Container>
         <Navbar.Brand as={Link} to="/" className="brand-title">
-          Habit<span className="brand-highlight">Tracker</span>
+          Habits<span className="brand-highlight">Master</span>
         </Navbar.Brand>
 
         {/* Hamburger menu (navbar toggle) */}
