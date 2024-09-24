@@ -65,30 +65,13 @@ const HabitsTrackerPage = () => {
     );
   };
 
-  const markTaskAsCompleted = (taskTrackerId) => {
+  const changeTaskStatus = (taskTrackerId, isCompleted) => {
     trackerService
-      .markTaskAsCompleted(taskTrackerId)
+      .changeTaskStatus(taskTrackerId, isCompleted)
       .then((updatedTask) => {
         updateHabitLocally(updatedTask.data); // Update task locally
       })
       .catch(() => console.error("Failed to mark task as completed."));
-  };
-
-  const deleteTask = (taskTrackerId) => {
-    trackerService
-      .deleteTask(taskTrackerId)
-      .then(() => {
-        // Remove the task locally
-        setHabits((prevHabits) =>
-          prevHabits.map((habit) => ({
-            ...habit,
-            taskTrackerIds: habit.taskTrackerIds.filter(
-              (task) => task._id !== taskTrackerId
-            ),
-          }))
-        );
-      })
-      .catch(() => console.error("Failed to delete task."));
   };
 
   return (
@@ -111,25 +94,13 @@ const HabitsTrackerPage = () => {
                 <Card.Body>
                   <Card.Title>{task.habitId.name}</Card.Title>
                   <Card.Text>{task.habitId.description}</Card.Text>
-                  <Card.Text>
-                    <strong>Task:</strong> {task.taskId.name}
-                  </Card.Text>
-                  <Card.Text>
-                    <strong>Status:</strong>{" "}
-                    {task.isCompleted ? "Completed" : "Pending"}
-                  </Card.Text>
                   <Button
                     variant="primary"
-                    onClick={() => markTaskAsCompleted(task.taskTrackerId)}
+                    onClick={() =>
+                      changeTaskStatus(task.taskTrackerId, task.isCompleted)
+                    }
                   >
-                    Mark as Completed
-                  </Button>
-                  <Button
-                    variant="danger"
-                    onClick={() => deleteTask(task.taskTrackerId)}
-                    className="ml-2"
-                  >
-                    Delete Task
+                    {task.isCompleted ? "Completed" : "Undo"}
                   </Button>
                 </Card.Body>
               </Card>

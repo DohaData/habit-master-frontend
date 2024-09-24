@@ -25,16 +25,20 @@ class TrackerService {
     return this.api.get("/tracker");
   };
 
-  markTaskAsCompleted = async (taskTrackerId) => {
-    return this.api.post(`/tracker/complete-task/${taskTrackerId}`);
+  changeTaskStatus = async (taskTrackerId, completedStatus) => {
+    return this.api.post(`/tracker/change-task-status/${taskTrackerId}`, {
+      completedStatus,
+    });
+  };
+
+  updateTaskComments = async (taskTrackerId, comments) => {
+    return this.api.put(`/tracker/update-task-comments/${taskTrackerId}`, {
+      comments,
+    });
   };
 
   getAllForAHabit = async (habitId) => {
     return this.api.get(`/tracker/${habitId}`);
-  };
-
-  deleteTask = async (taskTrackerId) => {
-    return this.api.delete(`/tracker/delete-task/${taskTrackerId}`);
   };
 
   deleteAllTaskTrackers = async (habitId) => {
@@ -44,7 +48,6 @@ class TrackerService {
   deleteHabitTracker = async (habitId) => {
     return this.api.delete(`/tracker/delete-habit-tracker/${habitId}`);
   };
-  
 }
 
 // Create one instance of the service

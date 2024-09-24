@@ -1,0 +1,89 @@
+.habits-page {
+  font-family: "Roboto", sans-serif;
+  color: #ffffff;
+  background-color: #1f1f1f;
+  padding: 2rem;
+}
+
+.habits-page h1 {
+  font-size: 2.5rem;
+  color: #00d2ff;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Habit card styles */
+.habit-card {
+  background-color: #333333;
+  border: none;
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.habit-card:hover {
+  transform: scale(1.05);
+}
+
+.habit-card .card-title {
+  color: #00d2ff;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.habit-card .btn-primary {
+  background-color: #00d2ff;
+  border: none;
+  color: #ffffff;
+}
+
+.habit-card .btn-primary:hover {
+  background-color: #00a0cc;
+}
+
+/* Form styling */
+.add-habit-form h2 {
+  color: #00d2ff;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.add-habit-form .form-label {
+  color: #ffffff;
+}
+
+.add-habit-form .form-control {
+  background-color: #333333;
+  color: #ffffff;
+  border: 1px solid #00d2ff;
+}
+
+.add-habit-form .form-control:focus {
+  background-color: #444444;
+  border-color: #00d2ff;
+  box-shadow: 0 0 5px rgba(0, 210, 255, 0.5);
+}
+
+.add-habit-form .btn-primary {
+  background-color: #00d2ff;
+  border: none;
+  color: #ffffff;
+}
+
+.add-habit-form .btn-primary:hover {
+  background-color: #00a0cc;
+}
+
+/* Success and error messages */
+.success-message {
+  color: #28a745;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.error-message {
+  color: #dc3545;
+  font-weight: bold;
+  margin-top: 1rem;
+}

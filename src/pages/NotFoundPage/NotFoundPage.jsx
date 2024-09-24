@@ -4,7 +4,7 @@ function NotFoundPage() {
   return (
     <div>
       <h1>Page Not Found</h1>
-      <p>This page doesn't seem to exist</p>
+      <p>This page doesn`&apos;`t seem to exist</p>
     </div>
   );
 }

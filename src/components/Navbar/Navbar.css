@@ -1,88 +1,97 @@
 /* General Navbar Styling */
 .custom-navbar {
-    background-color: #1f1f1f; /* Dark background for modern look */
-    padding: 1rem;
-    border-bottom: 2px solid #00d2ff; /* Accent color */
-    font-family: 'Roboto', sans-serif; /* Modern font */
-  }
-  
-  /* Custom Logo Styling */
+  background-color: #1f1f1f; /* Dark background for modern look */
+  padding: 1rem;
+  border-bottom: 2px solid #00d2ff; /* Accent color */
+  font-family: 'Roboto', sans-serif; /* Modern font */
+}
+
+/* Custom Logo Styling */
+.brand-title {
+  font-family: 'Montserrat', sans-serif; /* Clean modern font */
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.brand-highlight {
+  color: #00d2ff; /* Accent color */
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+/* Navbar Link Styling */
+.nav-link-custom {
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin-right: 15px;
+  transition: color 0.3s ease;
+  padding: 8px 12px;
+}
+
+.nav-link-custom:hover {
+  color: #00d2ff;
+  background-color: #333333;
+  border-radius: 8px;
+}
+
+/* Logout button */
+.logout-button {
+  border-color: #ff5f5f;
+  color: #ff5f5f;
+  margin-left: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #ff5f5f;
+  color: #ffffff;
+}
+
+/* User Display */
+.navbar-user {
+  color: #ffffff;
+  font-weight: 500;
+  margin-left: 20px;
+}
+
+/* Navbar Toggle (Hamburger Menu) */
+.navbar-toggler {
+  border-color: transparent;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
   .brand-title {
-    font-family: 'Montserrat', sans-serif; /* Clean modern font */
-    color: #ffffff;
-    font-size: 1.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
-  
-  .brand-highlight {
-    color: #00d2ff; /* Accent color */
-    font-weight: 700;
-    font-size: 1.8rem;
-  }
-  
-  /* Navbar Link Styling */
-  .nav-link-custom {
-    color: #ffffff;
-    font-size: 1.1rem;
-    margin-right: 15px;
-    transition: color 0.3s ease;
-    padding: 8px 12px;
-  }
-  
-  .nav-link-custom:hover {
-    color: #00d2ff;
-    background-color: #333333;
-    border-radius: 8px;
-  }
-  
-  .logout-button {
-    border-color: #ff5f5f;
-    color: #ff5f5f;
-    margin-left: 10px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .logout-button:hover {
-    background-color: #ff5f5f;
-    color: #ffffff;
-  }
-  
-  /* User Display */
-  .navbar-user {
-    color: #ffffff;
-    font-weight: 500;
-    margin-left: 20px;
-  }
-  
-  /* Mobile Responsiveness */
-  @media (max-width: 992px) {
-    .brand-title {
       font-size: 1.5rem;
-    }
-  
-    .nav-link-custom {
-      font-size: 1rem;
-      padding: 5px 10px;
-    }
-  
-    .navbar-user {
-      font-size: 0.9rem;
-    }
   }
 
-  .brand-title:hover .brand-highlight {
-    animation: colorChange 0.5s ease-in-out;
+  .nav-link-custom {
+      font-size: 1rem;
+      padding: 5px 10px;
   }
-  
-  @keyframes colorChange {
-    0% {
+
+  .navbar-user {
+      font-size: 0.9rem;
+  }
+}
+
+/* Brand Hover Effect */
+.brand-title:hover .brand-highlight {
+  animation: colorChange 0.5s ease-in-out;
+}
+
+@keyframes colorChange {
+  0% {
       color: #ffffff;
-    }
-    100% {
-      color: #00d2ff;
-    }
   }
-  
-  
+  100% {
+      color: #00d2ff;
+  }
+}
